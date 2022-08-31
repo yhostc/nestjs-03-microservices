@@ -20,7 +20,7 @@ async function bootstrap() {
     options: { retryAttempts: 5, retryDelay: 3000 },
   });
 
-  await app.startAllMicroservices();
+  // await app.startAllMicroservices();
   await app.listen(3000);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
