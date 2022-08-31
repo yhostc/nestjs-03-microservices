@@ -16,8 +16,8 @@ async function bootstrap() {
    */
   const app = await NestFactory.create(AppModule);
   app.connectMicroservice<MicroserviceOptions>({
-    transport: Transport.REDIS,
-    options: { retryAttempts: 5, retryDelay: 3000 , url: 'redis://0.0.0.0:6379'},
+    transport: Transport.TCP,
+    options: { retryAttempts: 5, retryDelay: 3000 },
   });
 
   await app.startAllMicroservices();
